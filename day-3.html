@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition if-ladder</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container-collection {
+        width: 50%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .container-collection input {
+        width: 300px;
+        height: 28px;
+        padding: 5px;
+        border-radius: 7px;
+        font-size: 22px;
+    }
+
+    .container-collection button {
+        width: 100px;
+        height: 28px;
+        border-radius: 7px;
+        font-size: 16px;
+        border: 1px solid black;
+    }
+
+    .container-collection button:active {
+        background-color: rgb(0, 136, 255);
+        color: white;
+    }
+
+    .container-collection .sarch-box {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .img-collection {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 80%;
+        gap: 20px;
+    }
+
+    img {
+        width: 300px;
+        height: 200px;
+        box-shadow: 0 0 10px;
+        border-radius: 5px;
+        animation: Zoom .2s linear;
+
+    }
+
+    h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    #cars {
+        display: none;
+
+    }
+
+    #bikes {
+        display: none;
+
+    }
+
+    #cycle {
+        display: none;
+
+    }
+
+    @keyframes Zoom {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+
+        }
+    }
+</style>
+
+<body>
+    <div class="container-collection">
+        <div class="sarch-box">
+            <input type="text" id="UserInput">
+            <button onclick="Find()">Search</button>
+        </div>
+        <div class="img-collection">
+            <img src="https://tse4.mm.bing.net/th?id=OIP._gPWltB6wwknn6_syte4eQHaEo&pid=Api&P=0&h=180" id="cars" alt="">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.4OUfx4_c0G5tAFo8NM6R_AHaEK&pid=Api&P=0&h=180" id="cars" alt="">
+            <img src="http://wallpapercave.com/wp/wp1845507.jpg" id="bikes" alt="">
+            <img src="https://images6.alphacoders.com/549/549198.jpg" id="cycle" alt="">
+            <h1 id="h1">Enter type of travel vehicles</h1>
+        </div>
+    </div>
+
+    <script>
+        function Find() {
+            let user = document.getElementById("UserInput").value;
+            let hell = document.getElementById("h1");
+            if (user == "") {
+                
+                hell.innerText = "car bike cycle  all ";
+
+            }
+
+            if (user == "car") {
+                document.getElementById("cars").style.display = "block";
+                document.getElementById("cycle").style.display = "none";
+                document.getElementById("bikes").style.display = "none";
+                hell.innerText = "car";
+
+
+            } if (user == "bike") {
+                document.getElementById("bikes").style.display = "block";
+                document.getElementById("cycle").style.display = "none";
+                document.getElementById("cars").style.display = "none";
+                hell.innerText = "bike";
+
+
+
+            }
+            if (user == "cycle") {
+                document.getElementById("cycle").style.display = "block";
+                document.getElementById("cars").style.display = "none";
+                document.getElementById("bikes").style.display = "none";
+                hell.innerText = "cycle";
+
+            }
+            if (user == "all") {
+                document.getElementById("cycle").style.display = "block";
+                document.getElementById("cars").style.display = "block";
+                document.getElementById("bikes").style.display = "block";
+                hell.innerText = "All Type Of vehicles";
+
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
